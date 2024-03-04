@@ -1,29 +1,12 @@
-// function getNextFriday(date) {
-//   const days = [
-//     'Sunday',
-//     'Monday',
-//     'Tuesday',
-//     'Wednesday',
-//     'Thursday',
-//     'Friday',
-//     'Saturday',
-//   ];
-//   const newDate = new Date(date);
-//   let Friday = 1;
-//   const resultDate = new Date(date);
-//   days.forEach((day, index) => {
-//     if (day === days[newDate.getDay()]) Friday = index;
-//     return Friday;
-//   });
-//   const different = 5 - Friday;
-//   console.log(7 - -1);
-//   let result2 = 0;
-//   if (different <= 0) {
-//     result2 = resultDate.setDate(date.getDate() + 7 + different);
-//   } else {
-//     result2 = resultDate.setDate(date.getDate() + different);
-//   }
-//   return new Date(result2);
+// function getCountDaysOnPeriod(dateStart, dateEnd) {
+//   console.log(new Date(dateEnd).getMonth());
+// //   console.log(new Date(dateStart).getDate());
+//   return new Date(dateEnd).getMonth() - new Date(dateStart).getMonth();
 // }
 
-// console.log(getNextFriday(new Date('2024-02-03T00:00:00Z')));
+// console.log(
+//   getCountDaysOnPeriod(
+//     new Date('2024-02-01T00:00:00.000Z'),
+//     new Date('2024-03-01T00:00:00.000Z')
+//   )
+// );
