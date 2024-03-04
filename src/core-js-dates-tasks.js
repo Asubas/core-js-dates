@@ -33,7 +33,7 @@ function dateToTimestamp(date) {
  */
 function getTime(date) {
   const newDate = new Date(date);
-  return newDate.toLocaleTimeString();
+  return newDate.toLocaleTimeString().padStart(7, 0);
 }
 
 /**
@@ -73,6 +73,8 @@ function getDayName(date) {
  * Date('2024-02-16T00:00:00Z') => Date('2024-02-23T00:00:00Z')
  */
 function getNextFriday(/* date */) {
+  // const newDate = new Date(date);
+  // return newDate;
   throw new Error('Not implemented');
 }
 
