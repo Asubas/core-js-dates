@@ -84,15 +84,20 @@ function getNextFriday(date) {
     'Friday',
     'Saturday',
   ];
-  const resultDate = new Date(date);
   const newDate = new Date(date);
   let Friday = 1;
+  const resultDate = new Date(date);
   days.forEach((day, index) => {
     if (day === days[newDate.getDay()]) Friday = index;
     return Friday;
   });
   const different = 5 - Friday;
-  const result2 = resultDate.setDate(date.getDate() + different);
+  let result2 = 0;
+  if (different <= 0) {
+    result2 = resultDate.setDate(date.getDate() + 7 + different);
+  } else {
+    result2 = resultDate.setDate(date.getDate() + different);
+  }
   return new Date(result2);
 }
 

@@ -8,16 +8,22 @@
 //     'Friday',
 //     'Saturday',
 //   ];
-//   const resultDate = new Date(date);
 //   const newDate = new Date(date);
 //   let Friday = 1;
+//   const resultDate = new Date(date);
 //   days.forEach((day, index) => {
 //     if (day === days[newDate.getDay()]) Friday = index;
 //     return Friday;
 //   });
 //   const different = 5 - Friday;
-//   const result2 = resultDate.setDate(date.getDate() + different);
+//   console.log(7 - -1);
+//   let result2 = 0;
+//   if (different <= 0) {
+//     result2 = resultDate.setDate(date.getDate() + 7 + different);
+//   } else {
+//     result2 = resultDate.setDate(date.getDate() + different);
+//   }
 //   return new Date(result2);
 // }
 
-// console.log(getNextFriday(new Date('2024-02-13T00:00:00Z')));
+// console.log(getNextFriday(new Date('2024-02-03T00:00:00Z')));
