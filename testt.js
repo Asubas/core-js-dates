@@ -1,10 +1,17 @@
-function getWeekNumberByDate(date) {
-  const firstDayYear = new Date(date.getFullYear(), 0, 1);
-  const diff = (date - firstDayYear) / 86400000;
-  const firstDayWeek = (firstDayYear.getDay() + 6) % 7;
-  console.log(firstDayWeek);
-  return Math.ceil((diff + firstDayWeek + 1) / 7);
-}
+// function getNextFridayThe13th(date) {
+//   const currentDay = date.getDay();
+//   let shift;
+//   console.log(date.getDay());
+//   if (currentDay === 6) {
+//     shift = 6;
+//   } else {
+//     shift = 5 - currentDay;
+//   }
+//   date.setDate(date.getDate() + shift);
+//   while (date.getDate() !== 13) {
+//     date.setDate(date.getDate() + 7);
+//   }
+//   return date;
+// }
 
-// // console.log(getWeekNumberByDate(new Date(2017, 7, 21)));
-console.log(getWeekNumberByDate(new Date(2023, 1, 23)));
+// console.log(getNextFridayThe13th(new Date(2024, 0, 13)));
