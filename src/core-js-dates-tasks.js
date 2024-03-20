@@ -292,8 +292,38 @@ function getQuarter(date) {
  * { start: '01-01-2024', end: '15-01-2024' }, 1, 3 => ['01-01-2024', '05-01-2024', '09-01-2024', '13-01-2024']
  * { start: '01-01-2024', end: '10-01-2024' }, 1, 1 => ['01-01-2024', '03-01-2024', '05-01-2024', '07-01-2024', '09-01-2024']
  */
-function getWorkSchedule(/* period, countWorkDays, countOffDays */) {
-  throw new Error('Not implemented');
+function getWorkSchedule(period, countWorkDays, countOffDays) {
+  const arrWorking = [];
+  const periodStart = period.start.split('-');
+  const periodEnd = period.end.split('-');
+  const dateStartPeriod = new Date(
+    periodStart[2],
+    periodStart[1] - 1,
+    periodStart[0]
+  );
+  const dateEndPeriod = new Date(periodEnd[2], periodEnd[1] - 1, periodEnd[0]);
+  while (dateStartPeriod <= dateEndPeriod) {
+    for (let i = 0; i < countWorkDays; i += 1) {
+      if (i === 0 && arrWorking.length === 0) {
+        dateStartPeriod.setDate(dateStartPeriod.getDate());
+      } else {
+        dateStartPeriod.setDate(dateStartPeriod.getDate() + 1);
+      }
+      if (
+        dateStartPeriod === dateEndPeriod ||
+        dateStartPeriod > dateEndPeriod
+      ) {
+        break;
+      }
+      const day = String(dateStartPeriod.getDate()).padStart(2, '0');
+      const month = String(dateStartPeriod.getMonth() + 1).padStart(2, '0');
+      const year = dateStartPeriod.getFullYear();
+      const resultDate = `${day}-${month}-${year}`;
+      arrWorking.push(resultDate);
+    }
+    dateStartPeriod.setDate(dateStartPeriod.getDate() + countOffDays);
+  }
+  return arrWorking;
 }
 
 /**
